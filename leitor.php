@@ -38,9 +38,10 @@ if (isset($_POST['acao'])) {
                     }
                 }
                 percorrerDiretorio($tempDir);
-                $json = json_encode($dados);
+                $json = json_encode($dados,JSON_PRETTY_PRINT);
                 header('Content-Type: application/json');
                 echo $json;
+                
             } else {
                 echo "Erro ao extrair o arquivo ZIP.";
             }
